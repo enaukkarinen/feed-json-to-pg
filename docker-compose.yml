@@ -6,11 +6,13 @@ services:
     container_name: some-postgis
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: housing_db  
     networks:
       - my_pg_network
     ports:
       - "5432:5432"
     restart: always
+    
 
   pgadmin:
     image: dpage/pgadmin4
