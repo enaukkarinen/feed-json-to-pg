@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  postgis:
+    image: postgis/postgis
+    container_name: some-postgis
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - my_pg_network
+    ports:
+      - "5432:5432"
+    restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    networks:
+      - my_pg_network
+    ports:
+      - "5050:80"
+    restart: always
+
+networks:
+  my_pg_network:
+    driver: bridge
