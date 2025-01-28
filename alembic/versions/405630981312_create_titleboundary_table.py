@@ -38,15 +38,15 @@ def upgrade() -> None:
                 name="geometry",
                 nullable=False,
             ),
-            nullable=False,
+            nullable=True,
         ),
         sa.Column("name", sa.String(255), nullable=True),
-        sa.Column("organisation_entity", sa.String(255), nullable=False),
-        sa.Column("point", sa.String, nullable=False),
-        sa.Column("prefix", sa.String(255), nullable=False),
-        sa.Column("reference", sa.String(255), nullable=False),
-        sa.Column("start_date", sa.String(255), nullable=False),
-        sa.Column("typology", sa.String(255), nullable=False),
+        sa.Column("organisation_entity", sa.String(255), nullable=True),
+        sa.Column("point", sa.String, nullable=True),
+        sa.Column("prefix", sa.String(255), nullable=True),
+        sa.Column("reference", sa.String(255), nullable=True),
+        sa.Column("start_date", sa.String(255), nullable=True),
+        sa.Column("typology", sa.String(255), nullable=True),
     )
 
 
