@@ -20,6 +20,4 @@ PGADMIN_DEFAULT_EMAIL=<value>
 PGADMIN_DEFAULT_PASSWORD<value>
 ```
 
-```sh
-pip install -r requirements.txt
-```
+
